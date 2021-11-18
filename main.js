@@ -1,3 +1,9 @@
+const c = ["Rock", "Paper", "Scissors"];
 function computerPlay(){
-    return Scissors;
+    console.log(c[0])
+}
+
+function rockPaperScissor(playerSelection, computerSelection){
+    
+    console.log(`"You lose!" ${c} beats Rock`)
 }
