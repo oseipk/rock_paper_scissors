@@ -1,9 +1,5 @@
-const c = ["Rock", "Paper", "Scissors"];
+const items = ["Rock", "Paper", "Scissors"];
 function computerPlay(){
-    console.log(c[0])
+    return items[Math.floor(Math.random()*items.length)];
 }
-
-function rockPaperScissor(playerSelection, computerSelection){
-    
-    console.log(`"You lose!" ${c} beats Rock`)
-}
+// console.log(computerPlay(items))
