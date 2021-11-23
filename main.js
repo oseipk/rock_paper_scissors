@@ -18,4 +18,4 @@ function playOn(playerSelection, computerSelection){
                 
     console.log(playOn(playerSelection,computerSelection)); 
 
-    
+     
