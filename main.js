@@ -1,13 +1,16 @@
-const items = ["Rock", "Paper", "Scissors", "Mango", "Juice"];
+
+const items = ["Rock", "Paper", "Scissors"];
+
+// computer automatically select randomly from items
 function computerPlay(){
     return items[Math.floor(Math.random()*items.length)];
 }
-// console.log(computerPlay(items))
+
 
 const playerSelection = prompt("enter one item", items);
- const computerSelection = computerPlay();
+const computerSelection = computerPlay();
 
-function playOn(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         return "It's a tie!"
     }
@@ -16,6 +19,6 @@ function playOn(playerSelection, computerSelection){
                 }
 }
                 
-    console.log(playOn(playerSelection,computerSelection)); 
+    console.log(playRound(playerSelection,computerSelection)); 
 
      
