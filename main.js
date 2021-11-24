@@ -16,7 +16,7 @@ function playRound(playerSelection, computerSelection){
     }
     else{
         return `${playerSelection} beats ${computerSelection} and wins the game`
-                }
+         }
 }
                 
     console.log(playRound(playerSelection,computerSelection)); 
