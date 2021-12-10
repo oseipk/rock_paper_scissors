@@ -1,4 +1,4 @@
-
+player
 const items = ["Rock", "Paper", "Scissors"];
 
 // computer automatically select randomly from items
@@ -9,7 +9,7 @@ function computerPlay(){
 //participants
 const playerSelection = window.prompt("enter one item", items);
 playerSelection.toLowerCase();
-const computerSelection = computerPlay();
+const computerSelection = computerPlay(items);
 
 //play game
 function playRound(playerSelection, computerSelection){
@@ -22,9 +22,9 @@ function playRound(playerSelection, computerSelection){
 
 //play the game 5 times(loop)
          
-function game(){
+function game(playRound){
     for(let i=5; i>items.length; i--){
-        playRound();
+        score;
                 
     }
 }
