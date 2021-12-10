@@ -10,7 +10,7 @@ function computerPlay(){
 const playerSelection = window.prompt("enter one item", items);
 playerSelection.toLowerCase();
 const computerSelection = computerPlay(items);
-const score = 0;
+this.score = 0;
 
 //play game
 function playRound(playerSelection, computerSelection){
@@ -25,7 +25,7 @@ function playRound(playerSelection, computerSelection){
          
 function game(playRound){
     for(let i=5; i>items.length; i--){
-       const score;
+       console.log(`You scored ${this.score})
                 
     }
 }
