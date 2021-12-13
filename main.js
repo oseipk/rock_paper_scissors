@@ -1,36 +1,89 @@
+// Selecting elements.
+const pScore = document.getElementById('playerScore');
+const cScore = document.getElementById('computerScore');
+const buttons = document.querySelectorAll('.selection button');
+const showIcon = document.querySelector('.show i');
+const computerShowIcon = document.querySelector('.computer i');
 
-const items = ["Rock", "Paper", "Scissors"];
+// Storing the scores.
+let computerScore = 1;
+let playerScore = 1;
 
-// computer automatically select randomly from items
-function computerPlay(){
-    return items[Math.floor(Math.random()*items.length)]
-};
+const rockIcon = "fas fa-hand-rock";
+const paperIcon = "fas fa-hand-paper";
+const scissorsIcon = "fas fa-hand-scissors";
 
-//participants
-const playerSelection = window.prompt("enter one item", items);
-playerSelection.toLowerCase();
-const computerSelection = computerPlay(items);
-this.score = 0;
+const randomClasses = [rockIcon, paperIcon, scissorsIcon];
+const text = document.getElementById('demo');
+const text2 = document.getElementById('demo2');
 
-//play game
-function playRound(playerSelection, computerSelection){
-    if(playerSelection !== computerSelection){
-        return `You Lose ! ${playerSelection} beats ${computerSelection}`
-    } else{
-        return "Congrats, You Win!" 
-    }
+const tie = ()=>{
+    text.innerHTML = "It's a Tie ! ";
+    text.style.color = 'orange';
+    text2.innerHTML = text.innerHTML;
+    //text2.style.color = 'orange';
 }
 
-//play the game 5 times(loop)
-         
-function game(playRound){
-    for(let i=5; i>items.length; i--){
-       console.log(`You scored ${this.score})
-                
-    }
+const win = ()=>{
+    text.innerHTML = "It's a Win ! ";
+    //text.style.color = 'rgb(1, 146, 1)';
+    text2.innerHTML = text.innerHTML;
+    text2.style.color = 'rgb(1, 146, 1)';
 }
 
-                
- //   console.log(game(Playround)); 
+const lose = ()=>{
+    text.innerHTML = "You Loosed ! ";
+    text.style.color = 'red';
+    text2.innerHTML = text.innerHTML;
+   // text2.style.color = 'red';
+}
 
-     
+// Game Functionality.
+const game = () =>{
+    buttons.forEach(btn =>{
+        btn.addEventListener('click',(e)=>{
+        // Random rock paper scissor for the computer and clicked ones for the player
+           let clickedBtn = e.target.className;
+           showIcon.className = clickedBtn;
+           let randomNum = Math.floor(Math.random() * randomClasses.length);
+           computerShowIcon.className = randomClasses[randomNum];
+
+           // If it's a Tie .
+           if(showIcon.className === computerShowIcon.className){
+               pScore.innerHTML = pScore.innerHTML;
+               cScore.innerHTML = cScore.innerHTML;
+               tie();
+           }
+
+           // if it's not a Tie.
+           else if(showIcon.className === rockIcon && computerShowIcon.className === scissorsIcon){
+               pScore.innerHTML = playerScore;
+               playerScore++;
+               win();
+           }else if(showIcon.className === rockIcon && computerShowIcon.className === paperIcon){
+               cScore.innerHTML = computerScore;
+               computerScore++;
+               lose();
+           }else if(showIcon.className === paperIcon && computerShowIcon.className === scissorsIcon){
+               cScore.innerHTML = computerScore;
+               computerScore++;
+               lose();
+           }else if(showIcon.className === paperIcon && computerShowIcon.className === rockIcon){
+               pScore.innerHTML = playerScore;
+               playerScore++;
+               win();
+           }else if(showIcon.className === scissorsIcon && computerShowIcon.className === rockIcon){
+               cScore.innerHTML = computerScore;
+               computerScore++;
+               lose();
+           }else if(showIcon.className === scissorsIcon && computerShowIcon.className === paperIcon){
+               pScore.innerHTML = playerScore;
+               playerScore++;
+               win();
+           }
+        });
+    });
+}
+
+// Run the game.
+game();
