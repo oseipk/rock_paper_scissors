@@ -15,27 +15,20 @@ const scissorsIcon = "fas fa-hand-scissors";
 
 const randomClasses = [rockIcon, paperIcon, scissorsIcon];
 const text = document.getElementById('demo');
-const text2 = document.getElementById('demo2');
 
 const tie = ()=>{
     text.innerHTML = "It's a Tie ! ";
-    text.style.color = 'orange';
-    text2.innerHTML = text.innerHTML;
-    //text2.style.color = 'orange';
+    text.style.color = "orange";
 }
 
 const win = ()=>{
     text.innerHTML = "It's a Win ! ";
-    //text.style.color = 'rgb(1, 146, 1)';
-    text2.innerHTML = text.innerHTML;
-    text2.style.color = 'rgb(1, 146, 1)';
+    text.style.color = "green";
 }
 
 const lose = ()=>{
-    text.innerHTML = "You Loosed ! ";
-    text.style.color = 'red';
-    text2.innerHTML = text.innerHTML;
-   // text2.style.color = 'red';
+    text.innerHTML = "You Lose ! ";
+    text.style.color = "red";
 }
 
 // Game Functionality.
