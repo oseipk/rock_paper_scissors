@@ -1,5 +1,4 @@
-# rock_paper_scissors
+<h1>Rock Paper Scissors Game </h1>
+<p> This is a game a player competes with a computer and scores are recorded.</p>
+<p> It becomes a <strong> <em>tie</em></strong> when both player and computer makes the same selection.</p>
 
-Constraint:
-1. set of 3 items that randomly returns 1 item at a time
-2. return item must differ from previous return item (no repetition of same item consecutively)
